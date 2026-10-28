@@ -75,4 +75,4 @@ Run in R:
 
 ## License and citation
 
-[Released under the MIT License (see LICENSE)]
+Released under the MIT License (see LICENSE)

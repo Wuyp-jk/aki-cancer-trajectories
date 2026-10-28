@@ -75,4 +75,4 @@ Run in R:
 
 ## License and citation
 
-[Add the license of your choice (for example MIT) and the citation of the article once published.]
+[Released under the MIT License (see LICENSE)]

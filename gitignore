@@ -1,0 +1,18 @@
+# Patient-level data derived from MIMIC-IV must never be committed
+# (the data use agreement does not allow redistribution)
+*.rds
+*.RData
+*.rda
+*.csv
+*.csv.gz
+reproduce_output/
+bq-results-*
+
+# R session files and histories
+.Rhistory
+.Rapp.history
+.Rproj.user/
+*.Rproj
+
+# macOS
+.DS_Store

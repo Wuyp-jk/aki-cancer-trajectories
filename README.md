@@ -19,7 +19,7 @@ This repository contains code only. **It contains no patient-level data.** MIMIC
 
 ## Effect measures
 
-The manuscript reports adjusted **risk ratios (RR)**, estimated by modified Poisson regression with robust variance, and adjusted **risk differences (RD)**, estimated by linear probability models with robust variance (RD in percentage points). In matched analyses standard errors are clustered on matched set; analyses restricted to cancer patients and the unmatched sensitivity analysis use heteroscedasticity-robust standard errors. All of these are computed in `reproduce/reproduce_all.R`. The scripts in `R/` are the earlier analysis scripts and may report odds ratios; the numbers in the manuscript are those recomputed by `reproduce/reproduce_all.R`.
+The manuscript reports adjusted **risk ratios (RR)**, estimated by modified Poisson regression with robust variance, and adjusted **risk differences (RD)**, estimated by linear probability models with robust variance (RD in percentage points). In matched analyses standard errors are clustered on matched set; analyses restricted to cancer patients and the unmatched sensitivity analysis use heteroscedasticity-robust standard errors. All of these are computed in `reproduce/reproduce_all.R`. The scripts in `R/` are the earlier analysis scripts and report odds ratios (`07`, `09`, `10` and `traj6.R`); the risk ratios and risk differences in the manuscript are those recomputed by `reproduce/reproduce_all.R`.
 
 ## Step 1. SQL (BigQuery)
 

@@ -1,6 +1,6 @@
 # ============================================================
 # 07  匹配队列的轨迹分析（更新版，严格72小时口径）
-# 取代原来的 07_followup_checks.r（那份把早死类也放进模型，出现完全分离，OR 达 1e8~1e9，不能使用）。
+# 说明：早死类（t0 后 72 小时内死亡）不进入死亡率模型，否则会出现完全分离。
 #
 # 前提：R 会话里已有 09 脚本留下的对象：
 #       md（匹配后数据，含 subclass）、all_cc（匹配前、协变量完整的全体）、
@@ -89,7 +89,7 @@ md_surv <- md_unified %>% filter(pheno72 != "1_early_death_72h")
 md_surv$pheno72 <- droplevels(md_surv$pheno72)
 cat("\n界标后人数:", nrow(md_surv), " 癌症:", sum(md_surv$cancer == 1), " 非癌症:", sum(md_surv$cancer == 0), "\n")
 
-# ---------- 2. 总体 OR（两种口径都给，请告诉我论文原来用哪一种） ----------
+# ---------- 2. 总体 OR（两种口径：仅协变量校正；协变量加轨迹） ----------
 cl_or <- function(f, data, term = "cancer") {
   b <- coef(f)[term]; se <- sqrt(vcovCL(f, cluster = data$subclass)[term, term])
   round(c(OR = exp(b), lo = exp(b - 1.96 * se), hi = exp(b + 1.96 * se)), 2)

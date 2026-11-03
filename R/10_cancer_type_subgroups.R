@@ -53,7 +53,7 @@ sub_c <- dat_c %>% select(stay_id, heme) %>%
 
 lab_ids <- md_unified %>% filter(cancer == 1) %>% select(stay_id, subclass) %>%
   left_join(sub_c, by = "stay_id") %>% select(subclass, subtype) %>% distinct()
-if (any(duplicated(lab_ids$subclass))) stop("同一个 subclass 里出现多个癌症患者，说明不是 1:2 匹配，请告诉我。")
+if (any(duplicated(lab_ids$subclass))) stop("同一个 subclass 里出现多个癌症患者，说明不是 1:2 匹配，请检查匹配设置。")
 if (any(is.na(lab_ids$subtype)))        stop("有癌症患者没有亚组标签，请检查 dat_c 是否包含全部癌症 stay_id。")
 
 sub_levels <- c("Hematologic", "Non-metastatic solid", "Metastatic solid")

@@ -1,0 +1,7 @@
+"traj","cancer_n","cancer_pct","control_n","control_pct"
+"1_early_death","317",23.4,"464",17.1
+"2_no_data","149",11,"303",11.2
+"3_transient","307",22.7,"708",26.1
+"4_persistent_stage2","274",20.2,"532",19.6
+"5_worsening","102",7.5,"225",8.3
+"6_severe_from_start","205",15.1,"476",17.6

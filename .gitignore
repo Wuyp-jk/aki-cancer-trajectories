@@ -16,3 +16,7 @@ bq-results-*
 
 # macOS
 .DS_Store
+analysis_v3.csv
+bq-results-*.csv
+*.RData
+.Rhistory
